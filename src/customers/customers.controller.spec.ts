@@ -63,7 +63,7 @@ describe('CustomersController', () => {
   describe('[POST] /customers', () => {
     it('should call create method with the correct parameters', async () => {
       // Arrange
-      const mockCreateCustomerDto: CreateCustomerDto = {
+      const createCustomerDto: CreateCustomerDto = {
         name: 'John Doe',
         email: 'johndoe@example.com',
         phone_number: '+5511987654321',
@@ -71,11 +71,11 @@ describe('CustomersController', () => {
       };
 
       // Act
-      await controller.create(mockCreateCustomerDto);
+      await controller.create(createCustomerDto);
 
       // Assert
       expect(mockCustomersService.createCustomer).toHaveBeenCalledWith(
-        mockCreateCustomerDto,
+        createCustomerDto,
       );
     });
   });
